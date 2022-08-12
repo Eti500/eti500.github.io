@@ -1,0 +1,122 @@
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+$padding-fieldset: 30px;
+
+$taille-lien-grand: 1.75rem;
+$taille-lien-grand-hover: 2.1rem;
+$taille-lien-moyen: 1.3rem;
+$taille-lien-moyen-hover: 1.5rem;
+
+.container{
+    max-width: 1200;
+}
+
+.flex{
+    display: flex;
+
+    &--justify-evenly{
+        @extend .flex;
+        justify-content: space-evenly;
+    }
+
+    &--align-start{
+        @extend .flex;
+        align-items: flex-start;
+    }
+}
+
+.padding{
+    padding: 10px;
+}
+
+.width-20{
+    width: 20%;
+}
+
+.width-80{
+    width: 80%;
+}
+
+.padding-top{
+    padding-top: 15px;
+}
+
+.margin-top{
+    margin-top: 10px;
+}
+
+ul{
+    list-style: none;
+}
+
+.lien{
+    text-decoration: none;
+
+    transition-duration: 0.55s;
+    transition-property: font-size;
+
+    &--grand{
+        @extend .lien;
+        font-size: $taille-lien-grand;
+    }
+    &--moyen{
+        @extend .lien;
+        font-size: $taille-lien-moyen;
+    }
+
+    &--grand:hover{
+        font-size: $taille-lien-grand-hover;
+    }
+    &--moyen:hover{
+        font-size: $taille-lien-moyen-hover;
+    }
+}
+
+.lien-present{
+    color: rgb(41, 157, 165);
+    text-decoration: underline;
+}
+
+fieldset{
+    padding: $padding-fieldset;
+}
+
+form input{
+    margin: 10px;
+}
+
+.form{
+    padding-left: 10px;
+}
+
+.centrer{
+   text-align: center;
+}
+
+/* Ces règles ci-dessous servent à écraser des règles Bootstrap */
+.table-bordered, .table-bordered th, .table-bordered tr, .table-bordered td {
+    border-color: black;
+}
+
+.carousel-control-prev-icon{
+    background-image: url("../img/FlecheRetour.png");
+}
+  
+  .carousel-control-next-icon{
+    background-image: url("../img/FlecheProchain.png");
+}
+
+.card{
+    animation-duration: 0.9s;
+    animation-name: changer-opacite;
+}
+
+@keyframes changer-opacite {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+        animation-iteration-count: 1;
+    }
+}
